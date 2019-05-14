@@ -1,9 +1,12 @@
 {
   "name": "ngx-table-to-excel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/core": "^7.2.0",
+    "exceljs": "^1.10.0",
+    "file-saver": "^2.0.2",
+    "jszip": "^3.2.1"
   },
   "main": "bundles/ngx-table-to-excel.umd.js",
   "module": "fesm5/ngx-table-to-excel.js",

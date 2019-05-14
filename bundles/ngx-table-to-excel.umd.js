@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('file-saver'), require('exceljs/dist/es5/exceljs.browser'), require('@angular/core')) :
     typeof define === 'function' && define.amd ? define('ngx-table-to-excel', ['exports', 'file-saver', 'exceljs/dist/es5/exceljs.browser', '@angular/core'], factory) :
     (factory((global['ngx-table-to-excel'] = {}),global.saveAs,global.ExcelJS,global.ng.core));
-}(this, (function (exports,saveAs,ExcelJS,i0) { 'use strict';
+}(this, (function (exports,saveAs,ExcelJS,core) { 'use strict';
 
     saveAs = saveAs && saveAs.hasOwnProperty('default') ? saveAs['default'] : saveAs;
     ExcelJS = ExcelJS && ExcelJS.hasOwnProperty('default') ? ExcelJS['default'] : ExcelJS;
@@ -638,11 +638,8 @@
                 };
             };
         DomParserService.decorators = [
-            { type: i0.Injectable, args: [{
-                        providedIn: 'root'
-                    },] }
+            { type: core.Injectable }
         ];
-        /** @nocollapse */ DomParserService.ngInjectableDef = i0.defineInjectable({ factory: function DomParserService_Factory() { return new DomParserService(); }, token: DomParserService, providedIn: "root" });
         return DomParserService;
     }());
 
@@ -760,9 +757,7 @@
                 this.save(wb, opts.name);
             };
         TableToExcelService.decorators = [
-            { type: i0.Injectable, args: [{
-                        providedIn: 'root'
-                    },] }
+            { type: core.Injectable }
         ];
         /** @nocollapse */
         TableToExcelService.ctorParameters = function () {
@@ -770,7 +765,6 @@
                 { type: DomParserService }
             ];
         };
-        /** @nocollapse */ TableToExcelService.ngInjectableDef = i0.defineInjectable({ factory: function TableToExcelService_Factory() { return new TableToExcelService(i0.inject(DomParserService)); }, token: TableToExcelService, providedIn: "root" });
         return TableToExcelService;
     }());
 
@@ -782,8 +776,11 @@
         function NgxTableToExcelModule() {
         }
         NgxTableToExcelModule.decorators = [
-            { type: i0.NgModule, args: [{
-                        imports: [],
+            { type: core.NgModule, args: [{
+                        providers: [
+                            DomParserService,
+                            TableToExcelService
+                        ]
                     },] }
         ];
         return NgxTableToExcelModule;

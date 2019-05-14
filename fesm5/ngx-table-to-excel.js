@@ -1,7 +1,7 @@
 import { __spread } from 'tslib';
 import saveAs from 'file-saver';
 import ExcelJS from 'exceljs/dist/es5/exceljs.browser';
-import { Injectable, NgModule, defineInjectable, inject } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -596,11 +596,8 @@ var DomParserService = /** @class */ (function () {
         };
     };
     DomParserService.decorators = [
-        { type: Injectable, args: [{
-                    providedIn: 'root'
-                },] }
+        { type: Injectable }
     ];
-    /** @nocollapse */ DomParserService.ngInjectableDef = defineInjectable({ factory: function DomParserService_Factory() { return new DomParserService(); }, token: DomParserService, providedIn: "root" });
     return DomParserService;
 }());
 
@@ -717,15 +714,12 @@ var TableToExcelService = /** @class */ (function () {
         this.save(wb, opts.name);
     };
     TableToExcelService.decorators = [
-        { type: Injectable, args: [{
-                    providedIn: 'root'
-                },] }
+        { type: Injectable }
     ];
     /** @nocollapse */
     TableToExcelService.ctorParameters = function () { return [
         { type: DomParserService }
     ]; };
-    /** @nocollapse */ TableToExcelService.ngInjectableDef = defineInjectable({ factory: function TableToExcelService_Factory() { return new TableToExcelService(inject(DomParserService)); }, token: TableToExcelService, providedIn: "root" });
     return TableToExcelService;
 }());
 
@@ -738,7 +732,10 @@ var NgxTableToExcelModule = /** @class */ (function () {
     }
     NgxTableToExcelModule.decorators = [
         { type: NgModule, args: [{
-                    imports: [],
+                    providers: [
+                        DomParserService,
+                        TableToExcelService
+                    ]
                 },] }
     ];
     return NgxTableToExcelModule;
