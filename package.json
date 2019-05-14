@@ -1,0 +1,21 @@
+{
+  "name": "ngx-table-to-excel",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/ngx-table-to-excel.umd.js",
+  "module": "fesm5/ngx-table-to-excel.js",
+  "es2015": "fesm2015/ngx-table-to-excel.js",
+  "esm5": "esm5/ngx-table-to-excel.js",
+  "esm2015": "esm2015/ngx-table-to-excel.js",
+  "fesm5": "fesm5/ngx-table-to-excel.js",
+  "fesm2015": "fesm2015/ngx-table-to-excel.js",
+  "typings": "ngx-table-to-excel.d.ts",
+  "metadata": "ngx-table-to-excel.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
